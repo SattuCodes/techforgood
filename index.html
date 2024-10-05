@@ -11,12 +11,17 @@
         *{
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             overflow: hidden;
+        }
+        #container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
         }
         #club{
             background-image: url(bg.png);
             background-size: cover;
-            height: 100vh;
             width: 30vw;
             display: flex;
             flex-direction: column;
@@ -28,7 +33,6 @@
             animation: slideUp 1.5s forwards ease-in-out 0.5s; 
         }
         #club-name{
-            sa
             font-size: 4vw;
             color: white;
             margin-top: 3vh;
@@ -45,7 +49,12 @@
         }
         #token{
             width: 70vw;
-            height: 100vh;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2vw;
+            font-family: 'Lato', sans-serif;
         }
         @keyframes slideUp {
             from {
@@ -60,13 +69,20 @@
     </style>
 </head>
 <body>
-    <section id="club">
-        <img src="main/Futurz_Club_Logo_1.png" alt="">
-        <span id="club-name"><span style="-webkit-text-stroke: 4px #48d597; margin-right: 1vw;">Futurz</span><span style="-webkit-text-stroke: 4px #7a93dd;">Club</span></span>
-        <span style="color: white; font-size: 1.7vw; font-family: 'Lato', sans-serif; animation: slideUp 1.5s forwards ease-in-out 0.5s; ">Presents</span>
-        <span id="event">#techforgood</span>
-    </section>
-    <section id="token"></section>
-    <section id="form"></section>
+    <div id="container">
+        <section id="club">
+            <img src="main/Futurz_Club_Logo_1.png" alt="">
+            <span id="club-name"><span style="-webkit-text-stroke: 4px #48d597; margin-right: 1vw;">Futurz</span><span style="-webkit-text-stroke: 4px #7a93dd;">Club</span></span>
+            <span style="color: white; font-size: 1.7vw; font-family: 'Lato', sans-serif; animation: slideUp 1.5s forwards ease-in-out 0.5s; ">Presents</span>
+            <span id="event">#techforgood</span>
+        </section>
+        <section id="token">
+            <span id="text">Got your TOKEN? <br> <span>Fill this form and make yourself count in the leaderboard</span></span>
+            
+        </section>
+        <section id="form">
+            <iframe id="form" src="https://docs.google.com/forms/d/e/1FAIpQLSfN7zA702rfXnMNljhdOzGNOx0Ngn4z_J9Bu8qeEIoOjXbZnA/viewform?embedded=true" width="750" height="980" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </section>
+    </div>
 </body>
 </html>
