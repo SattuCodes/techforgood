@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#techforgood | Futurz Club</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #club{
+            background-image: url(bg.png);
+            background-size: cover;
+            height: 100vh;
+            width: 30vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #club img{
+            width: 10vw;
+            animation: slideUp 1.5s forwards ease-in-out 0.5s; 
+        }
+        #club-name{
+            font-size: 4vw;
+            color: white;
+            margin-top: 3vh;
+            font-family: "Chakra Petch", sans-serif;
+            font-weight: 600;
+            animation: slideUp 1.5s forwards ease-in-out 0.5s; 
+        }
+        #event{
+            font-size: 3.7vw;
+            color: white;
+            font-family: "Play", sans-serif;
+            font-weight: 600;
+            animation: slideUp 1.5s forwards ease-in-out 0.5s; 
+        }
+        #token{
+            width: 70vw;
+            height: 100vh;
+        }
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px); 
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="club">
+        <img src="main/Futurz_Club_Logo_1.png" alt="">
+        <span id="club-name"><span style="-webkit-text-stroke: 4px #48d597; margin-right: 1vw;">Futurz</span><span style="-webkit-text-stroke: 4px #7a93dd;">Club</span></span>
+        <span style="color: white; font-size: 1.7vw; font-family: 'Lato', sans-serif; animation: slideUp 1.5s forwards ease-in-out 0.5s; ">Presents</span>
+        <span id="event">#techforgood</span>
+    </section>
+    <section id="token"></section>
+    <section id="form"></section>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech4Good | Futurz Club</title>
+    <link rel="shortcut icon" href="Futurz_Club_Logo_1.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+        * {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url(bg.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        #main {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #text {
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #text img {
+            width: 25%;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        #text h1, #text span, #text h2 {
+            font-family: "Chakra Petch", sans-serif;
+            transform: translateY(100px);
+            opacity: 0; 
+            animation: slideUp 1.5s forwards ease-in-out 0.5s; 
+        }
+
+        #text h1 {
+            font-size: 3vw;
+        }
+
+        #text h2 {
+            font-size: 2.5vw;
+        }
+
+        #token {
+            margin: 0 1.5vw;
+            height: 100vh;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 2.8vw;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-between;
+            transition: width 1s ease;
+            width: 60%;
+            -webkit-text-stroke: #000000 2px;
+            color: white;
+            font-weight: bold;
+        }
+
+        #form {
+            height: 100vh;
+            opacity: 0;
+            transition: opacity 1s ease;
+            width: 0;
+            overflow: hidden;
+            transition: width 1s ease;
+            background-color: #1e1e1e38;
+        }
+
+        .arrow {
+            cursor: pointer;
+            height: 120px;
+            position: absolute;
+            left: 62vw;
+            top: 35vh;
+            transform: translateX(-50%) translateY(-50%);
+            transition: transform .1s;
+            transition: left 1s;
+            width: 50px;
+        }
+
+        .arrow-top,
+        .arrow-bottom {
+            background-color: #000000;
+            height: 4px;
+            left: -5px;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+        }
+
+        .arrow-top:after,
+        .arrow-bottom:after {
+            background-color: #fff;
+            content: '';
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transition: all .15s;
+        }
+
+        .arrow-top {
+            transform: rotate(45deg);
+            transform-origin: bottom right;
+        }
+
+        .arrow-top:after {
+            left: 100%;
+            right: 0;
+            transition-delay: 0s;
+        }
+
+        .arrow-bottom {
+            transform: rotate(-45deg);
+            transform-origin: top right;
+        }
+
+        .arrow-bottom:after {
+            left: 0;
+            right: 100%;
+            transition-delay: .15s;
+        }
+
+        .arrow:hover .arrow-top:after {
+            left: 0;
+            transition-delay: .15s;
+        }
+
+        .arrow:hover .arrow-bottom:after {
+            right: 0;
+            transition-delay: 0s;
+        }
+
+        .arrow:active {
+            transform: translateX(-50%) translateY(-50%) scale(0.9);
+        }
+
+        #leadboard {
+            font-family: "Ubuntu", sans-serif;
+            font-size: 1.4vw;
+            margin-top: 1.5vw;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            font-weight: 100;
+            padding: 8px;
+            border-radius: 10px;
+            color: #fff;
+        }
+        th {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+        }
+
+        td {
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px); 
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="main">
+        <div id="text">
+            <img src="Futurz_Club_Logo_1.png" alt="logo">
+            <h1><span style="color: #fff; -webkit-text-stroke: 2px black;">Futurz</span><span style="color: #1e1e1e;">&nbsp;Club</span></h1>
+            <span style="font-size: 1.3vw;">Presents</span>
+            <h2>#tech<span style="color: #fff; -webkit-text-stroke: 2px black;">for</span>good</h2>
+        </div>
+        <div id="token">
+            <span style="margin-top: 3vh;">Got your token? <br><span style="font-size: 2vw;">Fill this form and make yourself count in the leaderboard</span></span>
+            <div class="arrow">
+                <div class="arrow-top"></div>
+                <div class="arrow-bottom"></div>
+            </div>
+            <div id="leadboard">
+                <h3>Leaderboard</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Items Donated</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardTable">
+                    </tbody>
+                </table>
+            </div>
+            <div id="small" style="font-size: 1vw; height: 10vh; margin: 0; width: 100%; display: flex; justify-content: space-around; align-items: center;">
+                <div id="textual" style="color: white; -webkit-text-stroke: #000000 1px; font-size: 1.3vw;">
+                    Futurz Club's <br> #techforgood
+                </div>
+                <div id="social">
+                    <a href="mailto:futurz.afgji@gmail.com " style="text-decoration: none; color: white; -webkit-text-stroke: #000000 1px; margin-right: 1vw;" ><i class='bx bx-envelope' style="font-size: 2vw;"></i></a>
+                    <a href="https://www.instagram.com/futurzclub/" style="text-decoration: none; color: white; -webkit-text-stroke: #000000 1px;"><i class='bx bxl-instagram' style="font-size: 2vw;"></i></a>
+                </div>
+                <div id="love" style="font-size: 0.8vw; -webkit-text-stroke: #000000 1px;">
+                    Created with ❤️ by <br>Satyam Tiwari <br> Kabir Jhamb
+                </div>
+                <div id="loc">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1280.1563007913292!2d77.14872417183734!3d28.581804999844653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19b3b69de44b%3A0x95acaea9e5c00f56!2sAir%20Force%20Golden%20Jubilee%20Institute!5e1!3m2!1sen!2sin!4v1727892859837!5m2!1sen!2sin" width="400" height="110" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <iframe id="form" src="https://docs.google.com/forms/d/e/1FAIpQLSfN7zA702rfXnMNljhdOzGNOx0Ngn4z_J9Bu8qeEIoOjXbZnA/viewform?embedded=true" width="750" height="980" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </section>
+
+    <script>
+        async function loadCSV() {
+            const response = await fetch('leaderboard.csv'); // Ensure this path is correct
+            const data = await response.text();
+            return parseCSV(data);
+        }
+
+        // Function to parse CSV
+        // Function to parse CSV
+        function parseCSV(data) {
+            const rows = data.split("\n").slice(1); // Split data into rows, skip header
+            return rows.map(row => {
+                const [name, , , itemsDonated] = row.split(","); // Extract name and itemsDonated (skip class, section)
+                return { name, itemsDonated: parseInt(itemsDonated, 10) };
+            }).filter(entry => entry.name && !isNaN(entry.itemsDonated)); // Filter out empty rows and invalid numbers
+        }
+
+
+        // Function to render leaderboard
+        function renderLeaderboard(data) {
+            const tableBody = document.querySelector("#leaderboardTable");
+            tableBody.innerHTML = ""; // Clear existing content
+
+            if (data.length === 0) {
+                const noDataRow = `<tr><td colspan="3">No data available</td></tr>`;
+                tableBody.innerHTML = noDataRow;
+            } else {
+                data.sort((a, b) => b.itemsDonated - a.itemsDonated); // Sort by items donated
+
+                data.forEach((entry, index) => {
+                    const row = `<tr>
+                        <td>${index + 1}</td>
+                        <td>${entry.name}</td>
+                        <td>${entry.itemsDonated}</td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            }
+        }
+
+        // Load CSV and render leaderboard when page loads
+        loadCSV().then(data => renderLeaderboard(data)).catch(error => {
+            console.error("Error loading CSV:", error);
+        });
+
+        document.querySelector('.arrow').addEventListener('click', function () {
+            const form = document.getElementById('form');
+            const token = document.getElementById('token');
+            const arrow = document.querySelector('.arrow');
+            arrow.style.left = '47%';
+            form.style.opacity = '1';
+            form.style.width = '30%';
+            token.style.width = '60%';
+        });
+    </script>
+    
+</body>
+</html>
